@@ -43,5 +43,8 @@
 {% if theme.footer.custom_text %}
   <div class="footer-custom">{#
   #}{{ theme.footer.custom_text }}{#
-#}</div>
+#}
+</div>
 {% endif %}
+<div>皖ICP备17021578号-1</div>
+
