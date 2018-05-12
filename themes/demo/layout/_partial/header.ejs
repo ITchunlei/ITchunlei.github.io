@@ -1,0 +1,19 @@
+<header id="header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="#"><%- config.title %></a>
+          </div>
+          <ul class="nav navbar-nav">
+            <% for ( var key in theme.menu){ %>
+            <li><a href="<%- theme.menu[key] %>"><%- key %></a></li>
+            <% } %>
+          </ul>
+          <form class="navbar-form navbar-right">
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+              </div>
+          </form>
+      </div>
+  </nav>
+</header>

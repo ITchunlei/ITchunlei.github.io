@@ -1,0 +1,45 @@
+body {
+  padding: 70px 0 0 0;
+  background : #eee;
+}
+
+
+@media (min-width: 992px) {
+  .container, .container-fluid {
+    width: 920px;
+  }
+}
+
+#header {
+  nav {
+    background: #00acec;
+  }
+  a {
+    color: #fff;
+  }
+}
+
+#main {
+  .row {
+    background : #fff;
+    >div {
+      padding: 0px;
+      border: 1px solid #eee;
+      >* {
+        padding : 0px 8px;
+      }
+      .title {
+        border-bottom : 1px solid #eee;
+      }
+    }
+  }
+  article {
+    margin : 0px 8px;
+    padding: 0px;
+    border-bottom : 1px solid #eee;
+  }
+
+  article:last-child {
+    border: none;
+  }
+}
