@@ -1,8 +1,12 @@
 # Header
-menu:
-  Home: /
-  Archives: /archives
+# menu:
+#  Home: /
+#  Archives: /archives
 rss: /atom.xml
+
+# local_search
+local_search:
+  enable: true
 
 # Content
 excerpt_link: Read More
@@ -19,13 +23,13 @@ widgets:
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
-# - category
+ - category
 # - tagcloud
 # - archive
 
 # widget behavior
 archive_type: 'monthly'
-show_count: false
+show_count: true
 
 # Miscellaneous
 google_analytics:

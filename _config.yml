@@ -4,16 +4,16 @@
 
 # Site
 title: 小绿豆的网络日志
-subtitle:
+subtitle: 
 description:
-keywords:
+keywords: 操作系统、内核、Android、ios
 author: Wang Chun Lei
 language: zh-CN
-timezone:
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://wangchunlei.cc
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape.1
+theme: self
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -81,3 +81,21 @@ deploy:
   type: git
   repository: git@github.com:ITchunlei/ITchunlei.github.io.git
   branch: master
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+#RSS订阅
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
+
+# search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
