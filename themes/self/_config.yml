@@ -1,12 +1,8 @@
 # Header
-# menu:
-#  Home: /
-#  Archives: /archives
+menu:
+  首页: /
+  归档: /archives
 rss: /atom.xml
-
-# local_search
-local_search:
-  enable: true
 
 # Content
 excerpt_link: Read More
@@ -17,19 +13,19 @@ sidebar: right
 widgets:
 - category
 #- tag
-#- tagcloud
+- tagcloud
 - archive
 - recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
- - category
+# - category
 # - tagcloud
 # - archive
 
 # widget behavior
 archive_type: 'monthly'
-show_count: true
+show_count: false
 
 # Miscellaneous
 google_analytics:
