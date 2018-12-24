@@ -3,20 +3,26 @@
     column(sidebar-column)
 
 .widget-wrap
+  background: color-widget-background
+  box-shadow: 0 0px 4px color-widget-border
+  border: 1px solid color-widget-border
+  border-radius: 2px
   margin: block-margin 0
 
 .widget-title
   @extend $block-caption
+  padding: 15px
+  border-bottom: 1px solid #eee
 
 .widget
   color: color-sidebar-text
   text-shadow: 0 1px #fff
-  background: color-widget-background
-  box-shadow: 0 0px 4px color-widget-border
+  //background: color-widget-background
+  //box-shadow: 0 0px 4px color-widget-border
   //box-shadow: 0 -1px 4px color-widget-border inset
-  border: 1px solid color-widget-border
+  //border: 1px solid color-widget-border
   padding: 15px
-  border-radius: 2px
+  //border-radius: 2px
   a
     color: color-link
     text-decoration: none
