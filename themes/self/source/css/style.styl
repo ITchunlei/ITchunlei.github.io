@@ -66,6 +66,8 @@ body
   .mobile-nav-on &
     left: mobile-nav-width
 
+
+
 if sidebar and sidebar isnt bottom
   #main
     @media mq-normal
@@ -75,6 +77,11 @@ if sidebar is left
   @media mq-normal
     #main
       float: right
+
+#main
+  background: #fff
+  display: block
+  margin: block-margin 0      
 
 @import "_extend"
 @import "_partial/header"
