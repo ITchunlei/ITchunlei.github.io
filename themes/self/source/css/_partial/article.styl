@@ -2,15 +2,18 @@
   //margin: block-margin 0
 
 .article-inner
-  @extend $block
+  //@extend $block
   overflow: hidden
+  padding: article-padding 0
 
 .article-meta
   clearfix()
+  //border-bottom: 1px solid #ddd
 
 .article-date
   @extend $block-caption
   float: left
+
 
 .article-category
   float: left
@@ -26,7 +29,7 @@
   margin: 0 12px 1em
 
 .article-header
-  padding: article-padding article-padding 0
+  //padding: article-padding article-padding 0
 
 .article-title
   text-decoration: none
@@ -42,7 +45,7 @@
   @extend $base-style
   clearfix()
   color: color-default
-  padding: 0 article-padding
+  //padding: 0 article-padding
   p, table
     line-height: line-height
     margin: line-height 0
@@ -142,7 +145,7 @@
   line-height: line-height
   border-top: 1px solid color-border
   padding-top: line-height
-  margin: 0 article-padding article-padding
+  //margin: 0 article-padding article-padding
   a
     color: color-grey
     text-decoration: none

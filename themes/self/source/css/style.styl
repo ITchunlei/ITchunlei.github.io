@@ -76,12 +76,7 @@ if sidebar and sidebar isnt bottom
 if sidebar is left
   @media mq-normal
     #main
-      float: right
-
-#main
-  background: #fff
-  display: block
-  margin: block-margin 0      
+      float: right    
 
 @import "_extend"
 @import "_partial/header"
@@ -94,3 +89,17 @@ if sidebar is left
 
 if sidebar
   @import "_partial/sidebar"
+
+#body-wrap
+  @extend $block
+  background: #fff
+  display: block
+  padding: 15px
+  margin: block-margin 0  
+
+#dm
+  background: #fff
+  width: 100%
+  height: 120px
+  border-bottom: 1px solid #eee
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3)
