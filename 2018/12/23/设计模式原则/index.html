@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>设计模式原则 | 小绿豆的网络笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="设计模式原则开闭原则（总原则）（Open close principle）为了使程序的扩展性好，易于维护和升级在程序需要拓展的时候，不去修改原有代码，而是扩展原有代码，实现热插拔功能。 开闭原则是设计模式所遵循的总原则，是所有面向对象程序开发的核心所在，开发过程中保持此原则可以大大提高软件的可维护性、可扩展性、可复用性。">
+<meta name="keywords" content="互联网,架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式原则">
+<meta property="og:url" content="http://wangchunlei.cc/2018/12/23/设计模式原则/index.html">
+<meta property="og:site_name" content="小绿豆的网络笔记">
+<meta property="og:description" content="设计模式原则开闭原则（总原则）（Open close principle）为了使程序的扩展性好，易于维护和升级在程序需要拓展的时候，不去修改原有代码，而是扩展原有代码，实现热插拔功能。 开闭原则是设计模式所遵循的总原则，是所有面向对象程序开发的核心所在，开发过程中保持此原则可以大大提高软件的可维护性、可扩展性、可复用性。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-26T03:10:49.006Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式原则">
+<meta name="twitter:description" content="设计模式原则开闭原则（总原则）（Open close principle）为了使程序的扩展性好，易于维护和升级在程序需要拓展的时候，不去修改原有代码，而是扩展原有代码，实现热插拔功能。 开闭原则是设计模式所遵循的总原则，是所有面向对象程序开发的核心所在，开发过程中保持此原则可以大大提高软件的可维护性、可扩展性、可复用性。">
+  
+    <link rel="alternate" href="/atom.xml" title="小绿豆的网络笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!-- <div id="banner"></div> -->
+  <div id="header-outer" class="outer">
+    <!-- <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小绿豆的网络笔记</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">技术博客</a>
+        </h2>
+      
+    </div> -->
+    <div id="header-inner" class="inner">
+      <div id="header-title">
+        <h1 id="logo-wrap">
+          <a href="/" id="logo">小绿豆的网络笔记</a>
+        </h1>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangchunlei.cc"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+          <div id="body-wrap">
+            <article id="post-设计模式原则" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/23/设计模式原则/" class="article-date">
+  <time datetime="2018-12-23T16:00:00.000Z" itemprop="datePublished">2018-12-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/设计模式/">设计模式</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      设计模式原则
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="设计模式原则"><a href="#设计模式原则" class="headerlink" title="设计模式原则"></a>设计模式原则</h2><h3 id="开闭原则（总原则）（Open-close-principle）"><a href="#开闭原则（总原则）（Open-close-principle）" class="headerlink" title="开闭原则（总原则）（Open close principle）"></a>开闭原则（总原则）（Open close principle）</h3><p>为了使程序的扩展性好，易于维护和升级在程序需要拓展的时候，不去修改原有代码，而是扩展原有代码，实现热插拔功能。</p>
+<p>开闭原则是设计模式所遵循的总原则，是所有面向对象程序开发的核心所在，开发过程中保持此原则可以大大提高软件的可维护性、可扩展性、可复用性。</p>
+<a id="more"></a>
+<h3 id="单一责任原则（Single-responsibility-principle）"><a href="#单一责任原则（Single-responsibility-principle）" class="headerlink" title="单一责任原则（Single responsibility principle）"></a>单一责任原则（Single responsibility principle）</h3><p>应该有且仅有一个原因引起类的变化。</p>
+<p>单一责任原则可使类的复杂性降低、可读性提高、可维护性提高、变更风险降低。</p>
+<h3 id="里式替换原则（Liskov-substitution-principle）"><a href="#里式替换原则（Liskov-substitution-principle）" class="headerlink" title="里式替换原则（Liskov substitution principle）"></a>里式替换原则（Liskov substitution principle）</h3><p>所有引用基类的地方必须能透明地使用其子类的对象。</p>
+<h4 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h4><ol>
+<li>子类必须完全实现父类的方法</li>
+<li>子类可以有自己的个性</li>
+<li>覆盖或实现父类的方法时输入参数可以被放大（子类输入参数的类型宽于父类）</li>
+<li>覆写或实现父类的方法时输入结果可以被缩小</li>
+</ol>
+<h3 id="依赖倒置原则（Dependence-inversion-principle）"><a href="#依赖倒置原则（Dependence-inversion-principle）" class="headerlink" title="依赖倒置原则（Dependence inversion principle）"></a>依赖倒置原则（Dependence inversion principle）</h3><p>面向接口编程，依赖抽象而不依赖于具体。</p>
+<ol>
+<li>高层模块不应该依赖底层模块，两者都应该依赖其抽象</li>
+<li>抽象不应该依赖细节</li>
+<li>细节应该依赖抽象</li>
+</ol>
+<h3 id="接口隔离原则（Interface-Segregation-principle）"><a href="#接口隔离原则（Interface-Segregation-principle）" class="headerlink" title="接口隔离原则（Interface Segregation principle）"></a>接口隔离原则（Interface Segregation principle）</h3><p>接口尽量细化，同时接口中的方法尽量少。</p>
+<ol>
+<li>客户端不应该依赖它不需要的接口</li>
+<li>类间的依赖关系应该建立在最小的接口上</li>
+<li>接口要尽量小、接口要高内聚、定制服务、接口设计是有限度的</li>
+</ol>
+<h3 id="迪米特法则（Demeter-principle）"><a href="#迪米特法则（Demeter-principle）" class="headerlink" title="迪米特法则（Demeter principle）"></a>迪米特法则（Demeter principle）</h3><p>迪米特法则来自于1987年美国东北大学(Northeastern University)一个名为“Demeter”的研究项目。迪米特法则又称为最少知识原则(LeastKnowledge Principle, LKP)。</p>
+<p>如果一个系统符合迪米特法则，那么当其中某一个模块发生修改时，就会尽量少地影响其他模块，扩展会相对容易，这是对软件实体之间通信的限制，迪米特法则要求限制软件实体之间通信的宽度和深度。迪米特法则可降低系统的耦合度，使类与类之间保持松散的耦合关系。</p>
+<p>一个对象应该对其他对象有最少的了解。</p>
+<h3 id="合成复用原则（Composite-Reuse-principle）"><a href="#合成复用原则（Composite-Reuse-principle）" class="headerlink" title="合成复用原则（Composite Reuse principle）"></a>合成复用原则（Composite Reuse principle）</h3><p>尽量使用合成、聚合的方式，而不是使用继承。</p>
+<p>在面向对象设计中，可以通过两种方法在不同的环境中复用已有的设计和实现，即通过组合、聚合关系或通过继承，但首先应该考虑使用组合、聚合，组合、聚合可以使系统更加灵活，降低类与类之间的耦合度，一个类的变化对其他类造成的影响相对较少，其次才考虑继承，在使用继承时，需要严格遵循里式替换原则，有效使用继承会有助于对问题的理解，降低复杂度，而滥用继承反而会增加系统构建和维护的难度以及系统的复杂度，因此需要慎重使用继承复用。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangchunlei.cc/2018/12/23/设计模式原则/" data-id="cjq1xwfvz0008ekjxmz3cn8g3" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/互联网/">互联网</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/26/Zircon内核x86架构源码分析之start.S/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Zircon内核x86架构源码分析之start.S
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+          </div>
+        </section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/fuchsia/" style="font-size: 10px;">fuchsia</a> <a href="/tags/zircon/" style="font-size: 10px;">zircon</a> <a href="/tags/互联网/" style="font-size: 10px;">互联网</a> <a href="/tags/内核/" style="font-size: 10px;">内核</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/Zircon内核x86架构源码分析之start.S/">Zircon内核x86架构源码分析之start.S</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/23/设计模式原则/">设计模式原则</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 wangchunlei.cc<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+<script src="https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,206 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>小绿豆的网络日志</title>
+  <title>小绿豆的网络笔记</title>
   
-  
+  <subtitle>技术博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangchunlei.cc/"/>
-  <updated>2018-12-21T07:10:25.142Z</updated>
+  <updated>2018-12-27T07:14:42.288Z</updated>
   <id>http://wangchunlei.cc/</id>
   
   <author>
-    <name>Wang Chun Lei</name>
+    <name>wangchunlei.cc</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>设计模式概述</title>
-    <link href="http://wangchunlei.cc/2018/12/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E8%BF%B0/"/>
-    <id>http://wangchunlei.cc/2018/12/20/设计模式概述/</id>
-    <published>2018-12-21T07:10:25.142Z</published>
-    <updated>2018-12-21T07:10:25.142Z</updated>
+    <title>Zircon内核x86架构源码分析之start.S</title>
+    <link href="http://wangchunlei.cc/2018/12/26/Zircon%E5%86%85%E6%A0%B8x86%E6%9E%B6%E6%9E%84%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E4%B9%8Bstart.S/"/>
+    <id>http://wangchunlei.cc/2018/12/26/Zircon内核x86架构源码分析之start.S/</id>
+    <published>2018-12-26T16:00:00.000Z</published>
+    <updated>2018-12-27T07:14:42.288Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://wangchunlei.cc/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>OOP概述</title>
-    <link href="http://wangchunlei.cc/2018/12/20/OOP%E6%A6%82%E8%BF%B0/"/>
-    <id>http://wangchunlei.cc/2018/12/20/OOP概述/</id>
-    <published>2018-12-21T07:09:58.429Z</published>
-    <updated>2018-12-21T07:09:58.429Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>start.S 是Zircon内核代码入口，位于/kernel/arch/x86 目录中</p><p>Zircon 内核遵守multiboot协议，可以使用符合mutliboot规范的引导器引导系统。</p><p>下面是multiboot引导系统的的入口代码：</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// This section name is known specially to kernel.ld and gen-kaslr-fixups.sh.</span><br><span class="line">// This code has relocations for absolute physical addresses, which do not get</span><br><span class="line">// adjusted by the boot-time fixups (which this code calls at the end).</span><br><span class="line">.section .text.boot, &quot;ax&quot;, @progbits</span><br><span class="line">.code32</span><br><span class="line">FUNCTION_LABEL(_multiboot_start)</span><br><span class="line">    cmpl $MULTIBOOT_BOOTLOADER_MAGIC, %eax  // 检测eax寄存器中是否是MULTIBOOT协议魔数</span><br><span class="line">    je 0f</span><br><span class="line">    xor %ebx,%ebx  //eax 寄存器模数不正确则清空ebx寄存器</span><br><span class="line">0:  // multiboot_info_t pointer is in %ebx. // 如果正常从multiboot引导过来，ebx内容为multiboot_info_t 地址</span><br><span class="line"></span><br><span class="line">    /* load our gdtr */</span><br><span class="line">    load_phys_gdtr //此时还未完成内核分页，所有还不能使用内核的线性地址，只能临时加载gdt的物理地址</span><br><span class="line"></span><br><span class="line">    /* load our data selectors */</span><br><span class="line">    movw $DATA_SELECTOR, %ax</span><br><span class="line">    movw %ax, %ds</span><br><span class="line">    movw %ax, %es</span><br><span class="line">    movw %ax, %fs</span><br><span class="line">    movw %ax, %gs</span><br><span class="line">    movw %ax, %ss</span><br><span class="line"></span><br><span class="line">    // 加载内核自己的32位代码选择子，跳转到内核自己的32位代码段</span><br><span class="line">    /* We need to jump to our sane 32 bit CS */</span><br><span class="line">    pushl $CODE_SELECTOR</span><br><span class="line">    pushl $PHYS(.Lfarjump)</span><br><span class="line">    lret</span><br></pre></td></tr></table></figure><p>上面代码很简单，只是加载内核自己的全局描述符，然后跳入内核的32位代码段，唯一需要注意的代码就是这个宏load_phys_gdtr,用于加载内核gdt的物理地址，代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//通过PHYS宏获gdtr的地址，然后放到内核堆栈上，在通过堆栈加载到全局描述符寄存器中</span><br><span class="line">// Load our new GDT by physical pointer.</span><br><span class="line">// _temp_gdtr has it as a virtual pointer, so copy it and adjust.</span><br><span class="line">// Clobbers %eax and %ecx.</span><br><span class="line">.macro load_phys_gdtr</span><br><span class="line">    movw PHYS(_temp_gdtr), %ax</span><br><span class="line">    movl PHYS(_temp_gdtr+2), %ecx</span><br><span class="line">    sub $PHYS_ADDR_DELTA, %ecx</span><br><span class="line">    movw %ax, -6(%esp)</span><br><span class="line">    movl %ecx, -4(%esp)</span><br><span class="line">    lgdt -6(%esp)</span><br><span class="line">.endm</span><br></pre></td></tr></table></figure><p>PHYS宏代码定义位于/kernel/arch/x86/include/arch/x86/asm.h 中，asm.h文件内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#pragma once</span><br><span class="line"></span><br><span class="line">#include &lt;asm.h&gt;</span><br><span class="line"></span><br><span class="line">/* x86 assembly macros used in a few files */</span><br><span class="line"></span><br><span class="line">#define PHYS_LOAD_ADDRESS (KERNEL_LOAD_OFFSET)</span><br><span class="line">#define PHYS_ADDR_DELTA (KERNEL_BASE - PHYS_LOAD_ADDRESS)</span><br><span class="line">#define PHYS(x) ((x) - PHYS_ADDR_DELTA)</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
+      &lt;p&gt;start.S 是Zircon内核代码入口，位于/kernel/arch/x86 目录中&lt;/p&gt;
+&lt;p&gt;Zircon 内核遵守multiboot协议，可以使用符合mutliboot规范的引导器引导系统。&lt;/p&gt;
+&lt;p&gt;下面是multiboot引导系统的的入口代码：&lt;/p&gt;
     
     </summary>
     
-      <category term="设计模式" scheme="http://wangchunlei.cc/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="操作系统" scheme="http://wangchunlei.cc/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
+    
+      <category term="内核" scheme="http://wangchunlei.cc/tags/%E5%86%85%E6%A0%B8/"/>
+    
+      <category term="fuchsia" scheme="http://wangchunlei.cc/tags/fuchsia/"/>
+    
+      <category term="zircon" scheme="http://wangchunlei.cc/tags/zircon/"/>
     
   </entry>
   
   <entry>
     <title>设计模式原则</title>
-    <link href="http://wangchunlei.cc/2018/12/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%88%99/"/>
-    <id>http://wangchunlei.cc/2018/12/20/设计模式原则/</id>
-    <published>2018-12-21T07:09:40.653Z</published>
-    <updated>2018-12-21T07:09:40.653Z</updated>
+    <link href="http://wangchunlei.cc/2018/12/23/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%88%99/"/>
+    <id>http://wangchunlei.cc/2018/12/23/设计模式原则/</id>
+    <published>2018-12-23T16:00:00.000Z</published>
+    <updated>2018-12-26T03:10:49.006Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="设计模式原则"><a href="#设计模式原则" class="headerlink" title="设计模式原则"></a>设计模式原则</h2><h3 id="开闭原则（总原则）（Open-close-principle）"><a href="#开闭原则（总原则）（Open-close-principle）" class="headerlink" title="开闭原则（总原则）（Open close principle）"></a>开闭原则（总原则）（Open close principle）</h3><p>为了使程序的扩展性好，易于维护和升级在程序需要拓展的时候，不去修改原有代码，而是扩展原有代码，实现热插拔功能。</p><p>开闭原则是设计模式所遵循的总原则，是所有面向对象程序开发的核心所在，开发过程中保持此原则可以大大提高软件的可维护性、可扩展性、可复用性。</p><a id="more"></a><h3 id="单一责任原则（Single-responsibility-principle）"><a href="#单一责任原则（Single-responsibility-principle）" class="headerlink" title="单一责任原则（Single responsibility principle）"></a>单一责任原则（Single responsibility principle）</h3><p>应该有且仅有一个原因引起类的变化。</p><p>单一责任原则可使类的复杂性降低、可读性提高、可维护性提高、变更风险降低。</p><h3 id="里式替换原则（Liskov-substitution-principle）"><a href="#里式替换原则（Liskov-substitution-principle）" class="headerlink" title="里式替换原则（Liskov substitution principle）"></a>里式替换原则（Liskov substitution principle）</h3><p>所有引用基类的地方必须能透明地使用其子类的对象。</p><h4 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h4><ol><li>子类必须完全实现父类的方法</li><li>子类可以有自己的个性</li><li>覆盖或实现父类的方法时输入参数可以被放大（子类输入参数的类型宽于父类）</li><li>覆写或实现父类的方法时输入结果可以被缩小</li></ol><h3 id="依赖倒置原则（Dependence-inversion-principle）"><a href="#依赖倒置原则（Dependence-inversion-principle）" class="headerlink" title="依赖倒置原则（Dependence inversion principle）"></a>依赖倒置原则（Dependence inversion principle）</h3><p>面向接口编程，依赖抽象而不依赖于具体。</p><ol><li>高层模块不应该依赖底层模块，两者都应该依赖其抽象</li><li>抽象不应该依赖细节</li><li>细节应该依赖抽象</li></ol><h3 id="接口隔离原则（Interface-Segregation-principle）"><a href="#接口隔离原则（Interface-Segregation-principle）" class="headerlink" title="接口隔离原则（Interface Segregation principle）"></a>接口隔离原则（Interface Segregation principle）</h3><p>接口尽量细化，同时接口中的方法尽量少。</p><ol><li>客户端不应该依赖它不需要的接口</li><li>类间的依赖关系应该建立在最小的接口上</li><li>接口要尽量小、接口要高内聚、定制服务、接口设计是有限度的</li></ol><h3 id="迪米特法则（Demeter-principle）"><a href="#迪米特法则（Demeter-principle）" class="headerlink" title="迪米特法则（Demeter principle）"></a>迪米特法则（Demeter principle）</h3><p>迪米特法则来自于1987年美国东北大学(Northeastern University)一个名为“Demeter”的研究项目。迪米特法则又称为最少知识原则(LeastKnowledge Principle, LKP)。</p><p>如果一个系统符合迪米特法则，那么当其中某一个模块发生修改时，就会尽量少地影响其他模块，扩展会相对容易，这是对软件实体之间通信的限制，迪米特法则要求限制软件实体之间通信的宽度和深度。迪米特法则可降低系统的耦合度，使类与类之间保持松散的耦合关系。</p><p>一个对象应该对其他对象有最少的了解。</p><h3 id="合成复用原则（Composite-Reuse-principle）"><a href="#合成复用原则（Composite-Reuse-principle）" class="headerlink" title="合成复用原则（Composite Reuse principle）"></a>合成复用原则（Composite Reuse principle）</h3><p>尽量使用合成、聚合的方式，而不是使用继承。</p><p>在面向对象设计中，可以通过两种方法在不同的环境中复用已有的设计和实现，即通过组合、聚合关系或通过继承，但首先应该考虑使用组合、聚合，组合、聚合可以使系统更加灵活，降低类与类之间的耦合度，一个类的变化对其他类造成的影响相对较少，其次才考虑继承，在使用继承时，需要严格遵循里式替换原则，有效使用继承会有助于对问题的理解，降低复杂度，而滥用继承反而会增加系统构建和维护的难度以及系统的复杂度，因此需要慎重使用继承复用。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
+      &lt;h2 id=&quot;设计模式原则&quot;&gt;&lt;a href=&quot;#设计模式原则&quot; class=&quot;headerlink&quot; title=&quot;设计模式原则&quot;&gt;&lt;/a&gt;设计模式原则&lt;/h2&gt;&lt;h3 id=&quot;开闭原则（总原则）（Open-close-principle）&quot;&gt;&lt;a href=&quot;#开闭原则（总原则）（Open-close-principle）&quot; class=&quot;headerlink&quot; title=&quot;开闭原则（总原则）（Open close principle）&quot;&gt;&lt;/a&gt;开闭原则（总原则）（Open close principle）&lt;/h3&gt;&lt;p&gt;为了使程序的扩展性好，易于维护和升级在程序需要拓展的时候，不去修改原有代码，而是扩展原有代码，实现热插拔功能。&lt;/p&gt;
+&lt;p&gt;开闭原则是设计模式所遵循的总原则，是所有面向对象程序开发的核心所在，开发过程中保持此原则可以大大提高软件的可维护性、可扩展性、可复用性。&lt;/p&gt;
     
     </summary>
     
       <category term="设计模式" scheme="http://wangchunlei.cc/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-  </entry>
-  
-  <entry>
-    <title>Google 全新系统fuchsia1</title>
-    <link href="http://wangchunlei.cc/2018/12/20/Google%20%E5%85%A8%E6%96%B0%E7%B3%BB%E7%BB%9Ffuchsia.4/"/>
-    <id>http://wangchunlei.cc/2018/12/20/Google 全新系统fuchsia.4/</id>
-    <published>2018-12-21T07:08:14.968Z</published>
-    <updated>2018-12-21T07:08:14.960Z</updated>
+      <category term="互联网" scheme="http://wangchunlei.cc/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-      <category term="操作系统" scheme="http://wangchunlei.cc/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Google 全新系统fuchsia1</title>
-    <link href="http://wangchunlei.cc/2018/12/20/Google%20%E5%85%A8%E6%96%B0%E7%B3%BB%E7%BB%9Ffuchsia.1/"/>
-    <id>http://wangchunlei.cc/2018/12/20/Google 全新系统fuchsia.1/</id>
-    <published>2018-12-21T02:23:52.913Z</published>
-    <updated>2018-12-21T02:23:52.913Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-      <category term="操作系统" scheme="http://wangchunlei.cc/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Google 全新系统fuchsia3</title>
-    <link href="http://wangchunlei.cc/2018/12/20/Google%20%E5%85%A8%E6%96%B0%E7%B3%BB%E7%BB%9Ffuchsia.3/"/>
-    <id>http://wangchunlei.cc/2018/12/20/Google 全新系统fuchsia.3/</id>
-    <published>2018-12-21T02:23:50.225Z</published>
-    <updated>2018-12-21T02:23:50.225Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-      <category term="操作系统" scheme="http://wangchunlei.cc/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Google 全新系统fuchsia</title>
-    <link href="http://wangchunlei.cc/2018/12/20/Google%20%E5%85%A8%E6%96%B0%E7%B3%BB%E7%BB%9Ffuchsia/"/>
-    <id>http://wangchunlei.cc/2018/12/20/Google 全新系统fuchsia/</id>
-    <published>2018-12-21T01:06:29.351Z</published>
-    <updated>2018-12-21T01:06:29.351Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-      <category term="操作系统" scheme="http://wangchunlei.cc/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Google 全新系统fuchsia2</title>
-    <link href="http://wangchunlei.cc/1969/12/31/Google%20%E5%85%A8%E6%96%B0%E7%B3%BB%E7%BB%9Ffuchsia.2/"/>
-    <id>http://wangchunlei.cc/1969/12/31/Google 全新系统fuchsia.2/</id>
-    <published>1969-12-31T08:00:02.018Z</published>
-    <updated>2018-12-21T03:14:28.953Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-      <category term="操作系统" scheme="http://wangchunlei.cc/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="Android" scheme="http://wangchunlei.cc/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Android/"/>
-    
-      <category term="IOS" scheme="http://wangchunlei.cc/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Android/IOS/"/>
-    
+      <category term="架构" scheme="http://wangchunlei.cc/tags/%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   

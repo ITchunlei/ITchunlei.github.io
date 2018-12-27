@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Zircon内核x86架构源码分析之start.S | 小绿豆的网络笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="start.S 是Zircon内核代码入口，位于/kernel/arch/x86 目录中 Zircon 内核遵守multiboot协议，可以使用符合mutliboot规范的引导器引导系统。 下面是multiboot引导系统的的入口代码：">
+<meta name="keywords" content="内核,fuchsia,zircon">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zircon内核x86架构源码分析之start.S">
+<meta property="og:url" content="http://wangchunlei.cc/2018/12/26/Zircon内核x86架构源码分析之start.S/index.html">
+<meta property="og:site_name" content="小绿豆的网络笔记">
+<meta property="og:description" content="start.S 是Zircon内核代码入口，位于/kernel/arch/x86 目录中 Zircon 内核遵守multiboot协议，可以使用符合mutliboot规范的引导器引导系统。 下面是multiboot引导系统的的入口代码：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-27T07:14:42.288Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zircon内核x86架构源码分析之start.S">
+<meta name="twitter:description" content="start.S 是Zircon内核代码入口，位于/kernel/arch/x86 目录中 Zircon 内核遵守multiboot协议，可以使用符合mutliboot规范的引导器引导系统。 下面是multiboot引导系统的的入口代码：">
+  
+    <link rel="alternate" href="/atom.xml" title="小绿豆的网络笔记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!-- <div id="banner"></div> -->
+  <div id="header-outer" class="outer">
+    <!-- <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小绿豆的网络笔记</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">技术博客</a>
+        </h2>
+      
+    </div> -->
+    <div id="header-inner" class="inner">
+      <div id="header-title">
+        <h1 id="logo-wrap">
+          <a href="/" id="logo">小绿豆的网络笔记</a>
+        </h1>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangchunlei.cc"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+          <div id="body-wrap">
+            <article id="post-Zircon内核x86架构源码分析之start.S" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/26/Zircon内核x86架构源码分析之start.S/" class="article-date">
+  <time datetime="2018-12-26T16:00:00.000Z" itemprop="datePublished">2018-12-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/操作系统/">操作系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Zircon内核x86架构源码分析之start.S
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>start.S 是Zircon内核代码入口，位于/kernel/arch/x86 目录中</p>
+<p>Zircon 内核遵守multiboot协议，可以使用符合mutliboot规范的引导器引导系统。</p>
+<p>下面是multiboot引导系统的的入口代码：</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// This section name is known specially to kernel.ld and gen-kaslr-fixups.sh.</span><br><span class="line">// This code has relocations for absolute physical addresses, which do not get</span><br><span class="line">// adjusted by the boot-time fixups (which this code calls at the end).</span><br><span class="line">.section .text.boot, &quot;ax&quot;, @progbits</span><br><span class="line">.code32</span><br><span class="line">FUNCTION_LABEL(_multiboot_start)</span><br><span class="line">    cmpl $MULTIBOOT_BOOTLOADER_MAGIC, %eax  // 检测eax寄存器中是否是MULTIBOOT协议魔数</span><br><span class="line">    je 0f</span><br><span class="line">    xor %ebx,%ebx  //eax 寄存器模数不正确则清空ebx寄存器</span><br><span class="line">0:  // multiboot_info_t pointer is in %ebx. // 如果正常从multiboot引导过来，ebx内容为multiboot_info_t 地址</span><br><span class="line"></span><br><span class="line">    /* load our gdtr */</span><br><span class="line">    load_phys_gdtr //此时还未完成内核分页，所有还不能使用内核的线性地址，只能临时加载gdt的物理地址</span><br><span class="line"></span><br><span class="line">    /* load our data selectors */</span><br><span class="line">    movw $DATA_SELECTOR, %ax</span><br><span class="line">    movw %ax, %ds</span><br><span class="line">    movw %ax, %es</span><br><span class="line">    movw %ax, %fs</span><br><span class="line">    movw %ax, %gs</span><br><span class="line">    movw %ax, %ss</span><br><span class="line"></span><br><span class="line">    // 加载内核自己的32位代码选择子，跳转到内核自己的32位代码段</span><br><span class="line">    /* We need to jump to our sane 32 bit CS */</span><br><span class="line">    pushl $CODE_SELECTOR</span><br><span class="line">    pushl $PHYS(.Lfarjump)</span><br><span class="line">    lret</span><br></pre></td></tr></table></figure>
+<p>上面代码很简单，只是加载内核自己的全局描述符，然后跳入内核的32位代码段，唯一需要注意的代码就是这个宏load_phys_gdtr,用于加载内核gdt的物理地址，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//通过PHYS宏获gdtr的地址，然后放到内核堆栈上，在通过堆栈加载到全局描述符寄存器中</span><br><span class="line">// Load our new GDT by physical pointer.</span><br><span class="line">// _temp_gdtr has it as a virtual pointer, so copy it and adjust.</span><br><span class="line">// Clobbers %eax and %ecx.</span><br><span class="line">.macro load_phys_gdtr</span><br><span class="line">    movw PHYS(_temp_gdtr), %ax</span><br><span class="line">    movl PHYS(_temp_gdtr+2), %ecx</span><br><span class="line">    sub $PHYS_ADDR_DELTA, %ecx</span><br><span class="line">    movw %ax, -6(%esp)</span><br><span class="line">    movl %ecx, -4(%esp)</span><br><span class="line">    lgdt -6(%esp)</span><br><span class="line">.endm</span><br></pre></td></tr></table></figure>
+<p>PHYS宏代码定义位于/kernel/arch/x86/include/arch/x86/asm.h 中，asm.h文件内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#pragma once</span><br><span class="line"></span><br><span class="line">#include &lt;asm.h&gt;</span><br><span class="line"></span><br><span class="line">/* x86 assembly macros used in a few files */</span><br><span class="line"></span><br><span class="line">#define PHYS_LOAD_ADDRESS (KERNEL_LOAD_OFFSET)</span><br><span class="line">#define PHYS_ADDR_DELTA (KERNEL_BASE - PHYS_LOAD_ADDRESS)</span><br><span class="line">#define PHYS(x) ((x) - PHYS_ADDR_DELTA)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangchunlei.cc/2018/12/26/Zircon内核x86架构源码分析之start.S/" data-id="cjq69ybai000075jxluisiua8" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fuchsia/">fuchsia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zircon/">zircon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内核/">内核</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/23/设计模式原则/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">设计模式原则</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+          </div>
+        </section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/fuchsia/" style="font-size: 10px;">fuchsia</a> <a href="/tags/zircon/" style="font-size: 10px;">zircon</a> <a href="/tags/互联网/" style="font-size: 10px;">互联网</a> <a href="/tags/内核/" style="font-size: 10px;">内核</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/Zircon内核x86架构源码分析之start.S/">Zircon内核x86架构源码分析之start.S</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/23/设计模式原则/">设计模式原则</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 wangchunlei.cc<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+<script src="https://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

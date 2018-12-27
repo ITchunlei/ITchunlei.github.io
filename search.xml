@@ -1,69 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[设计模式概述]]></title>
-    <url>%2F2018%2F12%2F20%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E8%BF%B0%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[Zircon内核x86架构源码分析之start.S]]></title>
+    <url>%2F2018%2F12%2F26%2FZircon%E5%86%85%E6%A0%B8x86%E6%9E%B6%E6%9E%84%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E4%B9%8Bstart.S%2F</url>
+    <content type="text"><![CDATA[start.S 是Zircon内核代码入口，位于/kernel/arch/x86 目录中 Zircon 内核遵守multiboot协议，可以使用符合mutliboot规范的引导器引导系统。 下面是multiboot引导系统的的入口代码： 123456789101112131415161718192021222324252627// This section name is known specially to kernel.ld and gen-kaslr-fixups.sh.// This code has relocations for absolute physical addresses, which do not get// adjusted by the boot-time fixups (which this code calls at the end)..section .text.boot, &quot;ax&quot;, @progbits.code32FUNCTION_LABEL(_multiboot_start) cmpl $MULTIBOOT_BOOTLOADER_MAGIC, %eax // 检测eax寄存器中是否是MULTIBOOT协议魔数 je 0f xor %ebx,%ebx //eax 寄存器模数不正确则清空ebx寄存器0: // multiboot_info_t pointer is in %ebx. // 如果正常从multiboot引导过来，ebx内容为multiboot_info_t 地址 /* load our gdtr */ load_phys_gdtr //此时还未完成内核分页，所有还不能使用内核的线性地址，只能临时加载gdt的物理地址 /* load our data selectors */ movw $DATA_SELECTOR, %ax movw %ax, %ds movw %ax, %es movw %ax, %fs movw %ax, %gs movw %ax, %ss // 加载内核自己的32位代码选择子，跳转到内核自己的32位代码段 /* We need to jump to our sane 32 bit CS */ pushl $CODE_SELECTOR pushl $PHYS(.Lfarjump) lret 上面代码很简单，只是加载内核自己的全局描述符，然后跳入内核的32位代码段，唯一需要注意的代码就是这个宏load_phys_gdtr,用于加载内核gdt的物理地址，代码如下： 123456789101112//通过PHYS宏获gdtr的地址，然后放到内核堆栈上，在通过堆栈加载到全局描述符寄存器中// Load our new GDT by physical pointer.// _temp_gdtr has it as a virtual pointer, so copy it and adjust.// Clobbers %eax and %ecx..macro load_phys_gdtr movw PHYS(_temp_gdtr), %ax movl PHYS(_temp_gdtr+2), %ecx sub $PHYS_ADDR_DELTA, %ecx movw %ax, -6(%esp) movl %ecx, -4(%esp) lgdt -6(%esp).endm PHYS宏代码定义位于/kernel/arch/x86/include/arch/x86/asm.h 中，asm.h文件内容如下：123456789#pragma once#include &lt;asm.h&gt;/* x86 assembly macros used in a few files */#define PHYS_LOAD_ADDRESS (KERNEL_LOAD_OFFSET)#define PHYS_ADDR_DELTA (KERNEL_BASE - PHYS_LOAD_ADDRESS)#define PHYS(x) ((x) - PHYS_ADDR_DELTA)]]></content>
       <categories>
-        <category>设计模式</category>
+        <category>操作系统</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[OOP概述]]></title>
-    <url>%2F2018%2F12%2F20%2FOOP%E6%A6%82%E8%BF%B0%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
+      <tags>
+        <tag>内核</tag>
+        <tag>fuchsia</tag>
+        <tag>zircon</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[设计模式原则]]></title>
-    <url>%2F2018%2F12%2F20%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%88%99%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2F2018%2F12%2F23%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%88%99%2F</url>
+    <content type="text"><![CDATA[设计模式原则开闭原则（总原则）（Open close principle）为了使程序的扩展性好，易于维护和升级在程序需要拓展的时候，不去修改原有代码，而是扩展原有代码，实现热插拔功能。 开闭原则是设计模式所遵循的总原则，是所有面向对象程序开发的核心所在，开发过程中保持此原则可以大大提高软件的可维护性、可扩展性、可复用性。 单一责任原则（Single responsibility principle）应该有且仅有一个原因引起类的变化。 单一责任原则可使类的复杂性降低、可读性提高、可维护性提高、变更风险降低。 里式替换原则（Liskov substitution principle）所有引用基类的地方必须能透明地使用其子类的对象。 实现细节 子类必须完全实现父类的方法 子类可以有自己的个性 覆盖或实现父类的方法时输入参数可以被放大（子类输入参数的类型宽于父类） 覆写或实现父类的方法时输入结果可以被缩小 依赖倒置原则（Dependence inversion principle）面向接口编程，依赖抽象而不依赖于具体。 高层模块不应该依赖底层模块，两者都应该依赖其抽象 抽象不应该依赖细节 细节应该依赖抽象 接口隔离原则（Interface Segregation principle）接口尽量细化，同时接口中的方法尽量少。 客户端不应该依赖它不需要的接口 类间的依赖关系应该建立在最小的接口上 接口要尽量小、接口要高内聚、定制服务、接口设计是有限度的 迪米特法则（Demeter principle）迪米特法则来自于1987年美国东北大学(Northeastern University)一个名为“Demeter”的研究项目。迪米特法则又称为最少知识原则(LeastKnowledge Principle, LKP)。 如果一个系统符合迪米特法则，那么当其中某一个模块发生修改时，就会尽量少地影响其他模块，扩展会相对容易，这是对软件实体之间通信的限制，迪米特法则要求限制软件实体之间通信的宽度和深度。迪米特法则可降低系统的耦合度，使类与类之间保持松散的耦合关系。 一个对象应该对其他对象有最少的了解。 合成复用原则（Composite Reuse principle）尽量使用合成、聚合的方式，而不是使用继承。 在面向对象设计中，可以通过两种方法在不同的环境中复用已有的设计和实现，即通过组合、聚合关系或通过继承，但首先应该考虑使用组合、聚合，组合、聚合可以使系统更加灵活，降低类与类之间的耦合度，一个类的变化对其他类造成的影响相对较少，其次才考虑继承，在使用继承时，需要严格遵循里式替换原则，有效使用继承会有助于对问题的理解，降低复杂度，而滥用继承反而会增加系统构建和维护的难度以及系统的复杂度，因此需要慎重使用继承复用。]]></content>
       <categories>
         <category>设计模式</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Google 全新系统fuchsia1]]></title>
-    <url>%2F2018%2F12%2F20%2FGoogle%20%E5%85%A8%E6%96%B0%E7%B3%BB%E7%BB%9Ffuchsia.4%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Google 全新系统fuchsia1]]></title>
-    <url>%2F2018%2F12%2F20%2FGoogle%20%E5%85%A8%E6%96%B0%E7%B3%BB%E7%BB%9Ffuchsia.1%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Google 全新系统fuchsia3]]></title>
-    <url>%2F2018%2F12%2F20%2FGoogle%20%E5%85%A8%E6%96%B0%E7%B3%BB%E7%BB%9Ffuchsia.3%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Google 全新系统fuchsia]]></title>
-    <url>%2F2018%2F12%2F20%2FGoogle%20%E5%85%A8%E6%96%B0%E7%B3%BB%E7%BB%9Ffuchsia%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Google 全新系统fuchsia2]]></title>
-    <url>%2F1969%2F12%2F31%2FGoogle%20%E5%85%A8%E6%96%B0%E7%B3%BB%E7%BB%9Ffuchsia.2%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <categories>
-        <category>操作系统</category>
-        <category>Android</category>
-        <category>IOS</category>
-      </categories>
+      <tags>
+        <tag>互联网</tag>
+        <tag>架构</tag>
+      </tags>
   </entry>
 </search>
